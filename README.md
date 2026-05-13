@@ -8,44 +8,34 @@ This is not a theory of consciousness, semantics, physics, society, or intellige
 
 ## Core Object
 
-Given a finite cochain complex
+Given a finite cochain complex:
 
-\[
-C^0 \xrightarrow{d_0} C^1 \xrightarrow{d_1} C^2,
-\qquad d_1d_0=0,
-\]
+```text
+C^0 --d0--> C^1 --d1--> C^2
+
+with d1 ∘ d0 = 0
 
 exact repair lives in
 
-\[
-B^1=\operatorname{im}(d_0),
-\]
+B^1 = im(d0)
 
 and irreducible obstruction lives in
 
-\[
-Q^1=C^1/B^1.
-\]
+Q^1 = C^1 / B^1
 
 For a declared finite observer/gauge,
 
-\[
-\Phi([\omega])=\inf_{\alpha\in C^0}\|\omega-d_0\alpha\|
-\]
+Phi([omega]) = inf over alpha in C^0 of || omega - d0(alpha) ||
 
 measures quotient obstruction. Closure failure is measured by
 
-\[
-\Gamma(\omega)=\|d_1\omega\|.
-\]
+Gamma(omega) = || d1(omega) ||
 
-When \(\Phi>0\), the guarded closure ratio is
+When Phi_0, the guarded closure ratio is
 
-\[
-R_{cl}=\Gamma/\Phi.
-\]
+R_cl = Gamma/Phi.
 
-A local decrease in \(\Phi\) is not valid if it worsens closure, hidden assumptions, rollback compatibility, or representation discipline.
+A local decrease in Phi is not valid if it worsens closure, hidden assumptions, rollback compatibility, or representation discipline.
 
 ## Claim Discipline
 

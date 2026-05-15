@@ -1,0 +1,493 @@
+# The General Theory of Finite Obstruction Calculus
+
+**Author:** Jeremy H. Carroll
+**Version:** v1.0 Pre-Print
+**Date:** May 2026
+
+
+## Publication Main
+
+> All files are available open-source on https://github.com/dbccpage/general_theory_of_finite_obstruction_calculus
+
+> This file is the publication-facing spine extracted from the working tome. Full proofs are in `2_GTFOC_Proof_Archive.md`. 
+LLM, Kaggle, domain, quantum, and various ideas' material is in `4_GTFOC_Tertiary_Workbench.md`.
+
+## Reader's Guide
+
+**Finite Obstruction Calculus (FOC)** is the finite mathematical engine that evaluates a certified regime by representing defects in a finite cochain complex, quotienting out exact repairs, measuring residual obstruction, and classifying the result as exact, survivor, open, lift-required, refused, or otherwise terminalized. The main paper keeps only the finite obstruction core: realization packet, cochain complex, (Q^1), (\Phi), (H^1), closure trichotomy, observer passivity, context-witness lift trigger, minimal resolver, and no-silent-mutation laws. The proof archive preserves the full proof text. The tertiary workbench keeps applications, implementation ledgers, toy models, speculative extensions, and external bridges out of the publication spine. 
+
+
+## Abstract
+
+We formalize a finite obstruction-repair calculus for contextual symbolic systems. A level is a finite tuple
+
+$$
+\mathcal M=(\mathcal T,\mathcal C,\rho,C^\bullet,\omega,p)
+$$
+
+where $\mathcal T$ and $\mathcal C$ are finite categories, $\rho:\mathcal C\to\mathrm{End}(\mathcal T)$ is a context action, and
+
+$$
+C^0\xrightarrow{d_0}C^1\xrightarrow{d_1}C^2,
+\qquad d_1d_0=0
+$$
+
+is a finite cochain complex. Exact repairs form $B^1=\operatorname{im}(d_0)$; quotient obstruction is
+
+$$
+Q^1=C^1/B^1;
+$$
+
+and closed residual obstruction is
+
+$$
+H^1=\ker(\bar d_1)\cong\ker(d_1)/\operatorname{im}(d_0).
+$$
+
+A declared finite gauge gives a quotient obstruction magnitude $\Phi$. Context-visible non-congruence supplies the lift trigger. Licensed lifts require explicit witness, resolver, minimality, preservation, and no-silent-mutation certificates.
+
+## Non-Claims
+
+This theory does not claim that every truth is finite. It does not claim that every obstruction is physical, cognitive, quantum, analytic, or metaphysical. It does not claim that a positive obstruction mass automatically licenses a lift. It does not claim Langlands, zeta, quantum-information, continuum, consciousness, or empirical-world consequences without a separate finite descent/certificate path.
+
+The narrow claim is:
+
+**Narrow claim:** finite obstruction authority requires finite realization, quotient obstruction, certificates, and terminal/refusal semantics.
+
+## Reader's Guide
+
+This main file contains the publication spine. Long proofs, proof variants, implementation details, and speculative/application material have been split out.
+
+- **Main file:** definitions, core laws, theorem statements, and minimal proof sketches.
+- **Proof archive:** detailed proofs and theorem ledger material.
+- **Tertiary workbench:** Omega Engine notes, quantum-information bridges, Langlands/zeta toy models, PDE/complexity/dynamics bridges, epistemic expansions, and open problems.
+
+## 1. Synchronization with Finite Authority Systems
+
+The finite obstruction calculus is the local verifier inside the Finite Authority System arena. In the global authority pipeline,
+
+$$
+\mathcal C_0
+\xrightarrow{\mathcal R}
+\mathcal C
+\xrightarrow{\rho}
+\mathcal S
+\xrightarrow{D}
+\mathcal P
+\xrightarrow{V}
+\mathbb V
+\xrightarrow{\tau}
+\mathbb T,
+$$
+
+this monograph supplies the internal logic of the transition
+
+$$
+D\to\mathbb V\to\mathbb T.
+$$
+
+No claim in this calculus has theorem-grade or authority-grade status unless it is coupled to a finite realization packet and replayable certificate.
+
+## 2. Primitive Distinguishability
+
+**Axiom T0.** Distinguishability is primitive. Sameness is certified zero-difference inside a declared difference regime.
+
+For a declared difference detector $\delta$,
+
+$$
+a=b \iff \delta(a,b)=0.
+$$
+
+The zero has meaning only because the difference detector exists. Thus exactness is not absence of structure; it is certified absorption by a declared repair image.
+
+## 3. Finite Realization Gate
+
+A theorem-grade claim $X$ in the finite obstruction calculus requires a declared finite realization packet
+
+$$
+\mathcal G=(K,\mathcal C,\rho,C^\bullet,E,\mathcal O,V,\tau,\mathcal K,\Lambda)
+$$
+
+where
+
+$$
+C^\bullet:C^0\xrightarrow{d_0}C^1\xrightarrow{d_1}C^2,
+\qquad d_1d_0=0.
+$$
+
+The gate theorem is:
+
+$$
+\boxed{
+\mathsf{TheoremGrade}(X)\Rightarrow
+K\wedge(\mathcal C,\rho)\wedge C^\bullet\wedge E\wedge\mathcal O\wedge V\wedge\tau\wedge\mathcal K\wedge\Lambda.
+}
+$$
+
+Equivalently, absence of any required component gives a typed realization/refusal terminal, not a proof of falsity.
+
+## 4. Ambient Finite Core
+
+Let
+
+$$
+\mathsf{FinCat},\qquad \mathsf{FinSet},\qquad \mathsf{Vect}^{fd}_{\mathbb R}
+$$
+
+denote finite small categories, finite sets, and finite-dimensional real vector spaces.
+
+For a finite category $\mathcal C$,
+
+$$
+\widehat{\mathcal C}_{fin}=\mathsf{FinSet}^{\mathcal C^{op}}
+$$
+
+is the finite presheaf environment. If a finite Grothendieck topology $J$ is explicitly supplied, one may form
+
+$$
+\mathsf{Sh}(\mathcal C,J)\subseteq\widehat{\mathcal C}_{fin}.
+$$
+
+No sheaf topology is automatic.
+
+## 5. MSS-N Level
+
+An MSS level is a finite tuple
+
+$$
+\mathcal M_n=(\mathcal T_n,\mathcal C_n,\rho_n,L_n,D_n,O_n,\delta_n,\chi_n,\omega_n,\mu_n)
+$$
+
+where $\mathcal T_n$ is a finite term/state category, $\mathcal C_n$ is a finite admissible context category, $\rho_n:\mathcal C_n\to\mathsf{End}(\mathcal T_n)$ is a context action, $L_n$ is the repair generator set, $D_n$ is the distinction-coordinate set, $O_n$ is the closure/obstruction-coordinate set, and $\omega_n$ is a declared positive gauge.
+
+The cochain carrier is
+
+$$
+C^0_n=\mathbb R^{L_n},\qquad
+C^1_n=\mathbb R^{D_n},\qquad
+C^2_n=\mathbb R^{O_n},
+$$
+
+with
+
+$$
+d_{0,n}=\delta_n,
+\qquad
+d_{1,n}=\chi_n,
+\qquad
+d_{1,n}d_{0,n}=0.
+$$
+
+## 6. Defects, Exact Repair, and Quotient Obstruction
+
+For a submitted finite state $s$, an edge defect has the form
+
+$$
+\delta_e(s)=r_e(s(v))-s(u).
+$$
+
+The exact repair subspace is
+
+$$
+B^1_n=\operatorname{im}(d_{0,n})\subseteq C^1_n.
+$$
+
+The quotient obstruction space is
+
+$$
+Q^1_n=C^1_n/B^1_n,
+\qquad
+\pi_n:C^1_n\to Q^1_n.
+$$
+
+Because $d_{1,n}d_{0,n}=0$, $d_{1,n}$ descends to
+
+$$
+\bar d_{1,n}:Q^1_n\to C^2_n,
+\qquad
+\bar d_{1,n}\pi_n=d_{1,n}.
+$$
+
+The closed quotient sector is
+
+$$
+H^1_n=\ker(\bar d_{1,n})\cong\ker(d_{1,n})/\operatorname{im}(d_{0,n}).
+$$
+
+Elements of $H^1_n\setminus\{0\}$ are closed non-exact residual classes.
+
+## 7. Normed Cokernel and Obstruction Magnitude
+
+A positive weight system gives
+
+$$
+\|x\|_{1,\omega_n}=\sum_{d\in D_n}\omega_{n,d}|x_d|.
+$$
+
+The quotient obstruction norm is
+
+$$
+\Phi_n([x])=\inf_{\alpha\in C^0_n}\|x-d_{0,n}\alpha\|_{1,\omega_n}.
+$$
+
+The closure mass is
+
+$$
+\Gamma_n([x])=\|\bar d_{1,n}([x])\|.
+$$
+
+The safe norm principle is:
+
+**Safe norm principle:** independent finite defects add by outer $\ell^1$ after local gauges are declared.
+
+Local gauges may be scalar $\ell^1$, vector $\ell^2$, trace norm, or another declared finite gauge. The core does not assert that $\ell^1$ is universal.
+
+## 8. Main Theorems
+
+### T1 — Finite Realization Gate
+
+No theorem-grade finite obstruction claim exists without a finite realization packet
+
+$$
+(K,\mathcal C,\rho,C^\bullet,E,\mathcal O,V,\tau,\mathcal K,\Lambda).
+$$
+
+The failed claim is not false by default; it terminalizes as a missing-carrier, missing-context, missing-complex, missing-operator, missing-evaluator, missing-certificate, or missing-refusal-semantics condition.
+
+### T2 — Normed Cokernel and Quotient Obstruction
+
+Let
+
+$$
+C^0\xrightarrow{d_0}C^1\xrightarrow{d_1}C^2
+$$
+
+be a finite-dimensional real cochain complex with $d_1d_0=0$. Let $C^1$ carry a declared norm. Define
+
+$$
+B^1=\operatorname{im}(d_0),
+\qquad
+Q^1=C^1/B^1,
+$$
+
+and
+
+$$
+\Phi([x])=\inf_{\alpha\in C^0}\|x-d_0\alpha\|.
+$$
+
+Then $Q^1$ is the cokernel of $d_0$, $\Phi$ is the quotient norm on $Q^1$, the infimum is attained, $d_1$ descends to $\bar d_1:Q^1\to C^2$, and
+
+$$
+H^1=\ker(\bar d_1)\cong\ker(d_1)/\operatorname{im}(d_0).
+$$
+
+### T3 — Primal-Dual Certificate Identity
+
+For $d_0:C^0\to C^1\cong\mathbb R^n$ and positive weights $\omega_i$, define
+
+$$
+\Phi([x])=
+\min_{\alpha\in C^0}\sum_i\omega_i|x_i-(d_0\alpha)_i|.
+$$
+
+Then
+
+$$
+\boxed{
+\Phi([x])=
+\max_{\varphi\in(C^1)^*}
+\{\varphi(x): d_0^*\varphi=0,\ |\varphi_i|\le \omega_i\}.
+}
+$$
+
+The primal minimum and dual maximum are attained. A replayable certificate consists of primal repair data, dual annihilator data, and a primal-dual equality check.
+
+### T4 — Context Witness Lift Trigger
+
+Let $S=(\mathcal T,\mathcal C,\rho;C^\bullet,\omega,p)$ with
+
+$$
+p:\operatorname{Ob}(\mathcal T)\to Q^1.
+$$
+
+Define
+
+$$
+x\sim y\iff p(x)=p(y).
+$$
+
+A lift is triggered only by context-visible non-congruence:
+
+$$
+\boxed{
+\mathsf{LiftTrigger}(S)
+\iff
+\exists x,y,c:
+ x\sim y\ \wedge\ \rho(c)x\not\sim\rho(c)y.
+}
+$$
+
+Obstruction mass alone does not imply licensed lift:
+
+$$
+\Phi(q)>0\not\Rightarrow\mathsf{LicensedLift}.
+$$
+
+### T5 — Minimal Resolver Existence
+
+Let $w$ be a typed context witness, and let $\mathcal G(w)$ be a declared finite candidate resolver class. If valid resolvers are decidable, nonempty, and ordered by a finite well-founded minimality order, then there exists a minimal valid resolver
+
+$$
+G^*\in\mathcal G^{\mathrm{vRes}}(w).
+$$
+
+The theorem proves existence, not uniqueness. If incomparable minimal resolvers exist and no declared equivalence identifies them, the valid terminal is nonunique-minimality or refusal, not silent choice.
+
+### T6 — Generator Growth Law
+
+If finite generators update by
+
+$$
+G_{n+1}=G_n\sqcup\coprod_{w\in W_n}\Delta_G(w),
+$$
+
+with finite witness set $W_n$, then
+
+$$
+\boxed{
+S(n+1)=S(n)+\sum_{w\in W_n}\Delta(w).
+}
+$$
+
+### T7 — Skeleton Preservation / No Silent Mutation
+
+Let $F_n:\mathcal M_n\to\mathcal M_{n+1}$ be a licensed lift, and let $U_n:\mathcal M_{n+1}\to\mathcal M_n$ be its forgetful comparison. Define
+
+$$
+\mathsf{LF}_n=U_nF_n.
+$$
+
+For certified old skeleton data $q\in\operatorname{Skel}_n$, preservation requires
+
+$$
+\boxed{
+q\in\operatorname{Skel}_n\Rightarrow U_nF_n(q)=q.
+}
+$$
+
+If $U_nF_n(q)\ne q$ without an explicit terminal tag declaring refinement, quotienting, invalidation, or refusal, then the lift commits silent mutation.
+
+## 9. Closure Trichotomy
+
+For $q\in Q^1_n$, define
+
+$$
+\mathsf{Exact}_n(q)\iff\Phi_n(q)=0,
+$$
+
+$$
+\mathsf{Survivor}_n(q)\iff\Phi_n(q)>0\wedge\bar d_{1,n}(q)=0,
+$$
+
+$$
+\mathsf{Open}_n(q)\iff\Phi_n(q)>0\wedge\bar d_{1,n}(q)\ne0.
+$$
+
+Finite dimensionality gives the disjoint partition
+
+$$
+Q^1_n=\mathsf{Exact}_n\sqcup\mathsf{Survivor}_n\sqcup\mathsf{Open}_n.
+$$
+
+A survivor is a closed non-exact quotient residual. An open obstruction is not yet structure; it requires repair, lift, refusal, or budget boundary.
+
+## 10. Observers and Epistemic Quotients
+
+An observer is a finite, deterministic, repair-compatible quotient map
+
+$$
+\mathcal O:Q^1_n\to Q^1_{\mathcal O}.
+$$
+
+Observer quotients are epistemic structure. They erase or identify distinctions. They do not create obstruction.
+
+Cross-observer stability is always relative to a declared finite observer family
+
+$$
+\mathfrak O_n=\{\mathcal O_1,\dots,\mathcal O_k\}.
+$$
+
+A class is observer-invariant only relative to a proven observer class.
+
+## 11. Terminal Semantics
+
+A verified obstruction class terminalizes into one of the following schematic statuses:
+
+| Terminal | Meaning |
+|---|---|
+| $\mathsf{Exact}$ | zero obstruction under declared repair image |
+| $\mathsf{Survivor}$ | closed non-exact residual |
+| $\mathsf{Open}$ | nonzero obstruction with nonzero closure mass |
+| $\mathsf{LicensedLift}$ | context witness plus valid lift contract |
+| $\mathsf{BudgetUnknown}$ | finite budget exhausted without authority |
+| $\mathsf{NoRule}$ | no declared rule licenses the move |
+| $\mathsf{TypedRefusal}$ | claim falls outside the current authority regime |
+
+Non-exact obstruction never silently authorizes exactness.
+
+## 12. Compact Formula Sheet
+
+$$
+C^0\xrightarrow{d_0}C^1\xrightarrow{d_1}C^2,
+\qquad d_1d_0=0.
+$$
+
+$$
+B^1=\operatorname{im}(d_0),
+\qquad
+Q^1=C^1/B^1,
+\qquad
+\pi:C^1\to Q^1.
+$$
+
+$$
+\bar d_1([x])=d_1x.
+$$
+
+$$
+H^1=\ker(\bar d_1)\cong\ker(d_1)/\operatorname{im}(d_0).
+$$
+
+$$
+\Phi([x])=\inf_{\alpha\in C^0}\|x-d_0\alpha\|.
+$$
+
+$$
+\Gamma([x])=\|\bar d_1([x])\|.
+$$
+
+$$
+x\sim y\iff p(x)=p(y).
+$$
+
+**Lift trigger:** there exist finite objects `x`, `y`, and context `c` such that `x ~ y` but `rho(c)x` is not equivalent to `rho(c)y`.
+
+## 13. Minimal Theorem Statement
+
+A finite contextual obstruction system has theorem-grade authority only after finite realization. Its exact repair classes form $B^1=\operatorname{im}(d_0)$, its obstruction quotient is $Q^1=C^1/B^1$, and its closed residual sector is $H^1=\ker(\bar d_1)$. A positive obstruction class blocks exactness but does not by itself license lift. Lift requires context-visible non-congruence plus a finite resolver/lift contract. Any representation extension that changes certified skeleton data without explicit terminal tagging commits silent mutation.
+
+## 14. Safe Claims
+
+1. The finite obstruction core is a finite cochain complex with certified quotient obstruction.
+2. Exactness is zero class in $Q^1$.
+3. Closed non-exact residuals are nonzero elements of $H^1$.
+4. $\Phi$ is a declared finite-gauge quotient norm, not a universal metaphysical norm.
+5. Context-visible non-congruence is the core lift trigger.
+6. Licensed lift requires witness, resolver, minimality, preservation, and replay certificates.
+7. Observer quotients do not create obstruction.
+8. Speculative bridges require separate finite descent packets.
+
+## 15. Boundary
+
+The finite obstruction calculus is expansive by extension, not by implication. New domains may be represented, reflected, or connected only after a finite realization and certificate path is supplied.
